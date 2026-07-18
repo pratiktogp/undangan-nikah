@@ -702,6 +702,32 @@ img {
 
     }
 
+    .hero-name {
+
+        font-size: 52px;
+
+    }
+
+    .hero-verse {
+
+        font-size: 15px;
+
+    }
+
+    .hero-label {
+
+        font-size: 14px;
+
+        letter-spacing: 2px;
+
+    }
+
+    .hero-divider {
+
+        width: 80px;
+
+    }
+
 }
 
 .hero-title {
@@ -719,5 +745,157 @@ img {
 .hero-verse {
 
     font-size: 15px;
+
+}
+
+/* ==========================================================
+   HERO SECTION
+========================================================== */
+
+#home {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: #FFFCE1;
+
+}
+
+.hero-container {
+
+    width: 100%;
+
+    max-width: 850px;
+
+}
+
+.hero-label {
+
+    color: #8F94FB;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+}
+
+.hero-name {
+
+    font-size: 72px;
+
+    line-height: 1.1;
+
+    color: #444;
+
+}
+
+.hero-and {
+
+    font-size: 42px;
+
+    color: #B5BAFF;
+
+    margin: 10px 0;
+
+}
+
+.hero-divider {
+
+    width: 120px;
+
+    height: 3px;
+
+    background: #B5BAFF;
+
+    margin: 40px auto;
+
+    border-radius: 10px;
+
+}
+
+.hero-verse {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    line-height: 2;
+
+    color: #666;
+
+}
+
+.hero-source {
+
+    margin-top: 20px;
+
+    color: #8F94FB;
+
+    font-weight: bold;
+
+}
+
+.scroll-down {
+
+    margin-top: 80px;
+
+    font-size: 18px;
+
+    animation: scrollMove 2s infinite;
+
+}
+
+@keyframes scrollMove {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(12px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+.hero-container {
+
+    animation: fadeUp 1.5s ease;
+
+}
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(50px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
 
 }
