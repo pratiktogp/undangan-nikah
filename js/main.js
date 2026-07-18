@@ -1,33 +1,93 @@
-// Mengunci scroll saat cover tampil
-document.body.classList.add("lock");
+/* ==========================================================
+   DOM ELEMENTS
+========================================================== */
 
-// Mengambil elemen dari HTML
-const openButton = document.getElementById("openInvitation");
+// Cover
 const cover = document.getElementById("cover");
+const openButton = document.getElementById("openInvitation");
+
+// App
 const app = document.getElementById("app");
+
+// Navigation
 const navigation = document.querySelector(".bottom-nav");
 
-// Event ketika tombol diklik
-openButton.addEventListener("click", function () {
 
-    // Membuat cover menghilang perlahan
+/* ==========================================================
+   INITIAL STATE
+========================================================== */
+
+// Mengunci scroll ketika website pertama kali dibuka
+document.body.classList.add("lock");
+
+// Memuat seluruh data website
+loadWeddingData();
+
+
+/* ==========================================================
+   EVENT LISTENER
+========================================================== */
+
+openButton.addEventListener("click", openInvitation);
+
+
+/* ==========================================================
+   FUNCTIONS
+========================================================== */
+
+/**
+ * Membuka undangan
+ */
+function openInvitation() {
+
+    // Fade Out Cover
     cover.style.opacity = "0";
 
-    // Menunggu animasi selesai
-    setTimeout(function () {
+    setTimeout(() => {
 
-        // Menyembunyikan cover
         cover.style.display = "none";
 
-        // Menampilkan isi website
         app.style.display = "block";
 
-        // Menampilkan navigasi
         navigation.style.display = "flex";
 
-        // Mengaktifkan scroll
         document.body.classList.remove("lock");
 
     }, 600);
 
-});
+}
+
+
+/**
+ * Mengisi seluruh data website dari data.js
+ */
+function loadWeddingData() {
+
+    /* ==========================
+       COVER
+    ========================== */
+
+    document.getElementById("coverGroom").textContent =
+        weddingData.couple.groom.nickname;
+
+    document.getElementById("coverBride").textContent =
+        weddingData.couple.bride.nickname;
+
+    document.getElementById("coverDate").textContent =
+        weddingData.wedding.date;
+
+
+    /* ==========================
+       HERO
+    ========================== */
+
+    document.getElementById("heroTitle").textContent =
+        weddingData.info.title;
+
+    document.getElementById("groomName").textContent =
+        weddingData.couple.groom.nickname;
+
+    document.getElementById("brideName").textContent =
+        weddingData.couple.bride.nickname;
+
+}

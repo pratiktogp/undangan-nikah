@@ -684,7 +684,7 @@ img {
 
     }
 
-    .bottom-nav {
+    /* .bottom-nav {
 
         width: 95%;
 
@@ -700,7 +700,47 @@ img {
 
         font-size: 12px;
 
+    } */
+
+    .bottom-nav {
+
+        width: calc(100% - 20px);
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        justify-content: space-around;
+
+        gap: 0;
+
+        padding: 12px 8px;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+
     }
+
+    .bottom-nav::-webkit-scrollbar {
+
+        display: none;
+
+    }
+
+    .bottom-nav a {
+
+        flex: 0 0 auto;
+
+        white-space: nowrap;
+
+        padding: 5px 8px;
+
+        font-size: 12px;
+
+    }
+
+    /* PEMBATAS NAV [Test] */
 
     .hero-name {
 
@@ -725,6 +765,19 @@ img {
     .hero-divider {
 
         width: 80px;
+
+    }
+
+    /* COUPLE */
+    .couple-wrapper {
+
+        gap: 30px;
+
+    }
+
+    .person-card {
+
+        width: 100%;
 
     }
 
@@ -897,5 +950,79 @@ img {
         transform: translateY(0);
 
     }
+
+}
+
+/* ==========================================================
+   COUPLE
+========================================================== */
+
+.couple-wrapper {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 60px;
+
+    flex-wrap: wrap;
+
+    margin-top: 60px;
+
+}
+
+.person-card {
+
+    width: 340px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+    text-align: center;
+
+    transition: .3s;
+
+}
+
+.person-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+.person-card img {
+
+    width: 220px;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 8px solid #FFFCE1;
+
+    margin: auto;
+
+}
+
+.person-card h3 {
+
+    margin-top: 25px;
+
+    font-size: 38px;
+
+}
+
+.person-card p {
+
+    margin-top: 10px;
+
+    color: #666;
 
 }
