@@ -1,10 +1,480 @@
-body {
-    background: #f5f5f5;
-    font-family: Arial, sans-serif;
+/* ==========================================================
+   THE WEDDING OF
+   CSS FOUNDATION
+   Version : 1.0
+========================================================== */
+
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+:root {
+
+    --bg-color: #FFFCE1;
+    --primary: #B5BAFF;
+    --primary-dark: #969CFF;
+
+    --text: #434343;
+    --text-light: #6D6D6D;
+
+    --white: #FFFFFF;
+
+    --shadow: 0 8px 30px rgba(0, 0, 0, .12);
+
+    --radius: 20px;
+
 }
 
-h1 {
-    color: #d63384;
+/* ===========================
+   RESET
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    font-family: "Poppins", sans-serif;
+
+    background: var(--bg-color);
+
+    color: var(--text);
+
+}
+
+body.lock {
+
+    overflow: hidden;
+
+}
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+
+h1,
+h2,
+h3 {
+
+    font-family: "Cormorant Garamond", serif;
+
+}
+
+p {
+
+    line-height: 1.7;
+
+}
+
+/* ===========================
+   COVER
+=========================== */
+
+#cover {
+
+    width: 100%;
+
+    height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
     text-align: center;
-    margin-top: 100px;
+
+    padding: 20px;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    transition: opacity .6s ease;
+
+    background:
+        linear-gradient(rgba(255, 252, 225, .72),
+            rgba(255, 252, 225, .72)),
+        url("../assets/images/background/bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+.overlay {
+
+    width: 100%;
+    max-width: 450px;
+
+}
+
+.subtitle {
+
+    font-size: 18px;
+
+    letter-spacing: 5px;
+
+    color: var(--text-light);
+
+}
+
+.overlay h1 {
+
+    font-size: 68px;
+
+    font-weight: 600;
+
+    margin-top: 5px;
+
+}
+
+.overlay h2 {
+
+    color: var(--primary);
+
+    font-size: 36px;
+
+    margin: 10px 0;
+
+}
+
+.date {
+
+    margin-top: 25px;
+
+    font-size: 18px;
+
+}
+
+.guest {
+
+    margin-top: 55px;
+
+}
+
+.guest p {
+
+    font-size: 15px;
+
+}
+
+#guest-name {
+
+    margin-top: 10px;
+
+    font-size: 28px;
+
+    font-weight: 600;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+button {
+
+    margin-top: 45px;
+
+    background: var(--primary);
+
+    color: white;
+
+    border: none;
+
+    padding: 16px 40px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+    box-shadow: var(--shadow);
+
+}
+
+button:hover {
+
+    background: var(--primary-dark);
+
+    transform: translateY(-4px);
+
+}
+
+button:active {
+
+    transform: scale(.98);
+
+}
+
+/* ===========================
+   WEBSITE
+=========================== */
+
+#app {
+
+    display: none;
+
+}
+
+section {
+
+    min-height: 100vh;
+
+    padding: 100px 30px;
+
+}
+
+section h2 {
+
+    font-size: 52px;
+
+    text-align: center;
+
+    margin-bottom: 50px;
+
+}
+
+/* ===========================
+   HOME
+=========================== */
+
+#home {
+
+    background: #FFFCE1;
+
+}
+
+/* ===========================
+   COUPLE
+=========================== */
+
+#couple {
+
+    background: #ffffff;
+
+}
+
+/* ===========================
+   EVENT
+=========================== */
+
+#event {
+
+    background: #FFFCE1;
+
+}
+
+/* ===========================
+   LOCATION
+=========================== */
+
+#location {
+
+    background: #ffffff;
+
+}
+
+/* ===========================
+   STORY
+=========================== */
+
+#story {
+
+    background: #FFFCE1;
+
+}
+
+/* ===========================
+   GALLERY
+=========================== */
+
+#gallery {
+
+    background: #ffffff;
+
+}
+
+/* ===========================
+   RSVP
+=========================== */
+
+#rsvp {
+
+    background: #FFFCE1;
+
+}
+
+/* ===========================
+   WISH
+=========================== */
+
+#wish {
+
+    background: #ffffff;
+
+}
+
+/* ===========================
+   GIFT
+=========================== */
+
+#gift {
+
+    background: #FFFCE1;
+
+}
+
+/* ===========================
+   BOTTOM NAVIGATION
+=========================== */
+
+.bottom-nav {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    display: none;
+
+    align-items: center;
+
+    gap: 18px;
+
+    background: white;
+
+    padding: 15px 25px;
+
+    border-radius: 50px;
+
+    box-shadow: var(--shadow);
+
+    z-index: 999;
+
+}
+
+.bottom-nav a {
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: .3s;
+
+}
+
+.bottom-nav a:hover {
+
+    color: var(--primary-dark);
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card {
+
+    background: white;
+
+    border-radius: var(--radius);
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+img {
+
+    max-width: 100%;
+
+    display: block;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px) {
+
+    .overlay h1 {
+
+        font-size: 52px;
+
+    }
+
+    .overlay h2 {
+
+        font-size: 28px;
+
+    }
+
+    #guest-name {
+
+        font-size: 22px;
+
+    }
+
+    section {
+
+        padding: 80px 20px;
+
+    }
+
+    section h2 {
+
+        font-size: 40px;
+
+    }
+
+    .bottom-nav {
+
+        width: 95%;
+
+        justify-content: space-evenly;
+
+        gap: 10px;
+
+        padding: 14px 10px;
+
+    }
+
+    .bottom-nav a {
+
+        font-size: 12px;
+
+    }
+
 }
